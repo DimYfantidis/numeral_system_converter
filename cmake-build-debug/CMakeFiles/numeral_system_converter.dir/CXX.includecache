@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/axaio/CLionProjects/numeral_system_converter/binToHex.h
+cstring
+-
+cmath
+-
+
+C:/Users/axaio/CLionProjects/numeral_system_converter/decToOther.h
+cstring
+-
+
+C:/Users/axaio/CLionProjects/numeral_system_converter/hexToBin.h
+
+C:/Users/axaio/CLionProjects/numeral_system_converter/main.cpp
+iostream
+-
+otherToDec.h
+C:/Users/axaio/CLionProjects/numeral_system_converter/otherToDec.h
+decToOther.h
+C:/Users/axaio/CLionProjects/numeral_system_converter/decToOther.h
+hexToBin.h
+C:/Users/axaio/CLionProjects/numeral_system_converter/hexToBin.h
+binToHex.h
+C:/Users/axaio/CLionProjects/numeral_system_converter/binToHex.h
+
+C:/Users/axaio/CLionProjects/numeral_system_converter/otherToDec.h
+iostream
+-
+cstring
+-
+cmath
+-
+

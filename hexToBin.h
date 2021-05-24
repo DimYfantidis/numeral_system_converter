@@ -29,7 +29,6 @@ const unsigned int SIZE_OF_ERROR_LUT = sizeof(ERR_MESSAGE) / sizeof(char *);
 }
 #endif //ERR_TERMINATE
 
-
 #ifndef MORE_MEMORY
 #define MORE_MEMORY
 template <typename custom>
@@ -60,26 +59,37 @@ short int val (const char d) {
 }
 #endif
 
-#ifndef READ_STRING
-#define READ_STRING
-char *readFromKeyboard() {
-    auto *read = new char[65];
-    fgets(read,65,stdin);
+#ifndef READ_HEX
+#define READ_HEX
+char *readHex() {
+    auto *read = new char[1000];
+    fgets(read,1000,stdin);
     read[strcspn(read,"\n")] = '\0';
-    return read;
+
+    size_t len = strlen(read);
+    auto *result = new char[len + 1];
+    memcpy(result, read, (len + 1) * sizeof(char));
+
+    for (int i = 0; i < len; i++) {
+        if ((result[i] < '0' || result[i] > '9') && (result[i] < 'A' || result[i] > 'F'))
+            terminate(2);
+    }
+
+    delete[] read;
+    return result;
 }
-#endif //READ_STRING
+#endif //READ_HEX
 
 char *hexToBinary(const char *N_0x) {
     size_t hexLength = strlen(N_0x);
-    unsigned long size = (4 * hexLength) + 1;
+    size_t size = (4 * hexLength) + 1;
     auto *N_0b = new char[size + 1];
 
     strcpy(N_0b, binaryQuantityHexRange[val(N_0x[0])]);
     for (int i = 1; i < hexLength; i++) {
         strcat(N_0b, binaryQuantityHexRange[val(N_0x[i])]);
     }
-    memmove(N_0b, N_0b + strcspn(N_0b,"1"), (strlen(N_0b) * sizeof(char)) + 1);
+    memmove(N_0b, N_0b + strcspn(N_0b,"1"), (strlen(N_0b) - strcspn(N_0b,"1") + 1) * sizeof(char));
 
     return N_0b;
 }
