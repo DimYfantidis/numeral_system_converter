@@ -54,11 +54,12 @@ char *readBin() {
     auto *result = new char[len + 1];
     memcpy(result, read, (len + 1) * sizeof(char));
 
+    bool A, B;
     for (int i = 0; i < len; i++) {
-        if ((result[i] < '0' || result[i] > '9') && (result[i] < 'A' || result[i] > 'F'))
-            terminate(2);
-        else if (result[i] < '0' || result[i] > '1')
-            terminate(3);
+        A = (result[i] < '0' || result[i] > '9') && (result[i] < 'A' || result[i] > 'F');
+        B = (result[i] < '0' || result[i] > '1');
+        if (B)
+            terminate(A ? 2 : 3);
     }
 
     delete[] read;
