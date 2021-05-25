@@ -37,7 +37,7 @@ short int val (const char d) {
 }
 #endif //DIGIT_VALUE
 
-unsigned long long numToDecimal (const char *N, short int base) {
+unsigned long long otherToDecimal (const char *N, short int base) {
     unsigned long long result = 0;
     size_t digits = strlen(N);
 

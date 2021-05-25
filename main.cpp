@@ -37,7 +37,7 @@ void otherToDecimal() {
         terminate(1);
     }
 
-    unsigned long long N_base_10 = numToDecimal(N,base);
+    unsigned long long N_base_10 = otherToDecimal(N, base);
     cout << endl << "Base 10 representation of (" << N << ")" << base << " is: " << N_base_10 << endl;
     halt();
 }
@@ -55,7 +55,7 @@ void decimalToOther() {
         terminate(1);
     }
 
-    cout << "Base " << base << " representation of " << N << " is: " << changeBase(N,base) << endl;
+    cout << "Base " << base << " representation of " << N << " is: " << decToOther(N, base) << endl;
     halt();
 }
 

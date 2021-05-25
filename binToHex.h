@@ -55,8 +55,10 @@ char *readBin() {
     memcpy(result, read, (len + 1) * sizeof(char));
 
     for (int i = 0; i < len; i++) {
-        if (result[i] < '0' || result[i] > '1')
+        if ((result[i] < '0' || result[i] > '9') && (result[i] < 'A' || result[i] > 'F'))
             terminate(2);
+        else if (result[i] < '0' || result[i] > '1')
+            terminate(3);
     }
 
     delete[] read;

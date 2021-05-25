@@ -62,7 +62,7 @@ void reverseString(char *arr) {
 }
 #endif //REVERSE_STRING
 
-char *changeBase(unsigned long long N, short int base) {
+char *decToOther(unsigned long long N, short int base) {
     unsigned long size = 2;
     auto *result = new char[size];
     int i = 0;

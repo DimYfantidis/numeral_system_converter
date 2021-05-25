@@ -89,7 +89,8 @@ char *hexToBinary(const char *N_0x) {
     for (int i = 1; i < hexLength; i++) {
         strcat(N_0b, binaryQuantityHexRange[val(N_0x[i])]);
     }
-    memmove(N_0b, N_0b + strcspn(N_0b,"1"), (strlen(N_0b) - strcspn(N_0b,"1") + 1) * sizeof(char));
+    size_t num_of_initial_zeros = strcspn(N_0b,"1");
+    memmove(N_0b, N_0b + num_of_initial_zeros, (strlen(N_0b) - num_of_initial_zeros + 1) * sizeof(char));
 
     return N_0b;
 }
