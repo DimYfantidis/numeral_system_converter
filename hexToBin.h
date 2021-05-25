@@ -95,5 +95,4 @@ char *hexToBinary(const char *N_0x) {
     return N_0b;
 }
 
-
 #endif //HEX_TO_BIN_H
