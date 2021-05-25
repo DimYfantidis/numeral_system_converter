@@ -28,7 +28,6 @@ const unsigned int SIZE_OF_ERROR_LUT = sizeof(ERR_MESSAGE) / sizeof(char *);
 }
 #endif //ERR_TERMINATE
 
-
 #ifndef MORE_MEMORY
 #define MORE_MEMORY
 template <typename custom>
