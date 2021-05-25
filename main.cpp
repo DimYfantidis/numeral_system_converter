@@ -45,7 +45,7 @@ void otherToDecimal() {
     do {
         cout << "Give base of number: ";
         cin >> base;
-    } while(inputFail(cin));
+    } while (inputFail(cin));
     cin.ignore(10,'\n');
 
     if (base < 2 || base > 16) {
