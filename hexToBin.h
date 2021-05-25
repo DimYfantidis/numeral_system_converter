@@ -44,7 +44,7 @@ custom *moreMemory(custom *arr, unsigned long &size, unsigned long increment) {
     size += increment;
     return arr;
 }
-#endif
+#endif //MORE_MEMORY
 
 #ifndef DIGIT_VALUE
 #define DIGIT_VALUE

@@ -24,8 +24,11 @@ void otherToDecimal() {
     char *N;
     short int base;
 
-    cout << "Give base of number: ";
-    cin >> base;
+    do {
+        cout << "Give base of number: ";
+        cin >> base;
+    } while(inputFail(cin));
+    cin.ignore(10,'\n');
     cout << "Give number: ";
     N = readFromKeyboard();
 

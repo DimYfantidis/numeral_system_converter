@@ -44,7 +44,7 @@ custom *moreMemory(custom *arr, unsigned long &size, unsigned long increment) {
     size += increment;
     return arr;
 }
-#endif
+#endif //MORE_MEMORY
 
 #ifndef REVERSE_STRING
 #define REVERSE_STRING
