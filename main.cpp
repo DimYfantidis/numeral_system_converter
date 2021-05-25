@@ -76,7 +76,7 @@ void decimalToOther() {
     auto *temp = strdup(NUMERAL_SYS_NAMES[base - 2]);
     temp[0] -= 32;
 
-    cout << temp << " representation of " << N << " is: " << decToOther(N, base) << endl;
+    cout << temp << " representation of (" << N << ")10 is: " << decToOther(N, base) << endl;
 
     delete[] temp;
     halt();
