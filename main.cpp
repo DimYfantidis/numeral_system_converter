@@ -77,6 +77,8 @@ void decimalToOther() {
     temp[0] -= 32;
 
     cout << temp << " representation of " << N << " is: " << decToOther(N, base) << endl;
+
+    delete[] temp;
     halt();
 }
 
