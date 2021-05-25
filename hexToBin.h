@@ -82,7 +82,7 @@ char *readHex() {
 
 char *hexToBinary(const char *N_0x) {
     size_t hexLength = strlen(N_0x);
-    size_t size = (4 * hexLength) + 1;
+    size_t size = (4 * hexLength);
     auto *N_0b = new char[size + 1];
 
     strcpy(N_0b, binaryQuantityHexRange[val(N_0x[0])]);
@@ -90,7 +90,7 @@ char *hexToBinary(const char *N_0x) {
         strcat(N_0b, binaryQuantityHexRange[val(N_0x[i])]);
     }
     size_t num_of_initial_zeros = strcspn(N_0b,"1");
-    memmove(N_0b, N_0b + num_of_initial_zeros, (strlen(N_0b) - num_of_initial_zeros + 1) * sizeof(char));
+    memmove(N_0b, N_0b + num_of_initial_zeros, (size - num_of_initial_zeros + 1) * sizeof(char));
 
     return N_0b;
 }
