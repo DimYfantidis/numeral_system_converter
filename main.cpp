@@ -52,7 +52,7 @@ void otherToDecimal() {
         terminate(1);
     }
 
-    cout << "Give " << NUMERAL_SYS_NAMES[base-2] << " number: ";
+    cout << "Input " << NUMERAL_SYS_NAMES[base-2] << " number: ";
     N = readFromKeyboard();
 
     cout << endl;
@@ -87,7 +87,7 @@ void hexToBin() {
     auto *N = readHex();
 
     auto *N_base_2 = hexToBinary(N);
-    cout << "Base 2 representation of 0x" << N << " is: 0b" << N_base_2 << endl;
+    cout << "Binary representation of 0x" << N << " is: 0b" << N_base_2 << endl;
     halt();
 }
 
@@ -98,7 +98,7 @@ void binToHex() {
     auto *N = readBin();
 
     auto *N_base_16 = binToHexadecimal(N);
-    cout << "Base 16 representation of 0b" << N << " is: 0x" << N_base_16 << endl;
+    cout << "Hexadecimal representation of 0b" << N << " is: 0x" << N_base_16 << endl;
     halt();
 }
 
