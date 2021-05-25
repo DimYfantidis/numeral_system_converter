@@ -17,7 +17,7 @@ const unsigned int SIZE_OF_ERROR_LUT = sizeof(ERR_MESSAGE) / sizeof(char *);
 
 [[noreturn]] void terminate (unsigned short code) {
     if (code != 0 && code <= SIZE_OF_ERROR_LUT) {
-        cerr << endl << ERR_MESSAGE[code - 1] << endl;
+        cerr << endl << ERR_MESSAGE[code - 1] << endl << endl;
     }
     system("PAUSE");
     exit (code);

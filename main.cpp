@@ -5,6 +5,24 @@
 #include "binToHex.h"
 using namespace std;
 
+const char *NUMERAL_SYS_NAMES[] = {
+        "binary",
+        "ternary",
+        "quaternary",
+        "quinary",
+        "senary",
+        "septenaray",
+        "octal",
+        "nonary",
+        "decimal",
+        "undecimal",
+        "duodecimal",
+        "tridecimal",
+        "tetradecimal",
+        "pentadecimal",
+        "hexadecimal"
+};
+
 bool inputFail(istream &input) {
     if (input.fail()) {
         input.clear();
@@ -29,23 +47,24 @@ void otherToDecimal() {
         cin >> base;
     } while(inputFail(cin));
     cin.ignore(10,'\n');
-    cout << "Give number: ";
-    N = readFromKeyboard();
 
-    cout << endl;
     if (base < 2 || base > 16) {
         terminate(1);
     }
 
+    cout << "Give " << NUMERAL_SYS_NAMES[base-2] << " number: ";
+    N = readFromKeyboard();
+
+    cout << endl;
     unsigned long long N_base_10 = otherToDecimal(N, base);
-    cout << endl << "Base 10 representation of (" << N << ")" << base << " is: " << N_base_10 << endl;
+    cout << endl << "Decimal representation of (" << N << ")" << base << " is: " << N_base_10 << endl;
     halt();
 }
 
 void decimalToOther() {
     unsigned long long N;
     short int base;
-    cout << "Give number: ";
+    cout << "Input decimal number: ";
     cin >> N;
     cout << "Give numerical base:";
     cin >> base;
@@ -54,8 +73,10 @@ void decimalToOther() {
     if (base < 2 || base > 16) {
         terminate(1);
     }
+    auto *temp = strdup(NUMERAL_SYS_NAMES[base - 2]);
+    temp[0] -= 32;
 
-    cout << "Base " << base << " representation of " << N << " is: " << decToOther(N, base) << endl;
+    cout << temp << " representation of " << N << " is: " << decToOther(N, base) << endl;
     halt();
 }
 
