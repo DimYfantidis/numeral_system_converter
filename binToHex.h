@@ -61,7 +61,6 @@ char *readBin() {
         if (B)
             terminate(A ? 2 : 3);
     }
-
     delete[] read;
     return result;
 }
