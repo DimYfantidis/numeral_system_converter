@@ -92,6 +92,11 @@ char *hexToBinary(const char *N_0x) {
     size_t num_of_initial_zeros = strcspn(N_0b,"1");
     memmove(N_0b, N_0b + num_of_initial_zeros, (size - num_of_initial_zeros + 1) * sizeof(char));
 
+    if (*N_0b == '\0') {
+        *N_0b = '0';
+        *(N_0b + 1) = '\0';
+    }
+
     return N_0b;
 }
 
