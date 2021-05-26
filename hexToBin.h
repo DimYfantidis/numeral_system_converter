@@ -97,11 +97,7 @@ char *hexToBinary(const char *N_0x) {
         *N_0b = '0';
         *(N_0b + 1) = '\0';
     }
-    auto *temp = new char[size + 1];
-    strcpy(temp, N_0b);
-    delete[] N_0b;
 
-    N_0b = temp;
     return N_0b;
 }
 

@@ -58,6 +58,8 @@ void otherToDecimal() {
     cout << endl;
     unsigned long long N_base_10 = otherToDecimal(N, base);
     cout << endl << "Decimal representation of (" << N << ")" << base << " is: " << N_base_10 << endl;
+    delete[] N;
+
     halt();
 }
 
@@ -90,6 +92,8 @@ void hexToBin() {
 
     auto *N_base_2 = hexToBinary(N);
     cout << "Binary representation of 0x" << N << " is: 0b" << N_base_2 << endl;
+    delete[] N;
+
     halt();
 }
 
@@ -101,6 +105,8 @@ void binToHex() {
 
     auto *N_base_16 = binToHexadecimal(N);
     cout << "Hexadecimal representation of 0b" << N << " is: 0x" << N_base_16 << endl;
+    delete[] N;
+
     halt();
 }
 
