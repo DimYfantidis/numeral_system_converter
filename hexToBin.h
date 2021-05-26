@@ -90,13 +90,18 @@ char *hexToBinary(const char *N_0x) {
         strcat(N_0b, binaryQuantityHexRange[val(N_0x[i])]);
     }
     size_t num_of_initial_zeros = strcspn(N_0b,"1");
-    memmove(N_0b, N_0b + num_of_initial_zeros, (size - num_of_initial_zeros + 1) * sizeof(char));
+    size -= num_of_initial_zeros;
+    memmove(N_0b, N_0b + num_of_initial_zeros, (size + 1) * sizeof(char));
 
     if (*N_0b == '\0') {
         *N_0b = '0';
         *(N_0b + 1) = '\0';
     }
+    auto *temp = new char[size + 1];
+    strcpy(temp, N_0b);
+    delete[] N_0b;
 
+    N_0b = temp;
     return N_0b;
 }
 
